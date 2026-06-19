@@ -13,23 +13,32 @@ def exibir_nome_do_programa():
 ''');
 
 def exibir_opcoes():
+    '''Função para exibição de opções para o usuário'''
+
     print('1. Cadastrar restaurante');
     print('2. Listar restaurante');
     print('3. Alternar estado do restaurante');
     print('4. Sair\n');
 
 def finalizar_app():
+    '''Função responsável pela finalização do programa'''
     exibir_subtitulos('Finalizando o app')
 
 def voltar_ao_menu_principal():
+    '''Função de retorno para a função main()'''
+
     input('\nDigite uma tecla para voltar ao menu principal ')
     main()
 
 def opcao_invalida():
+    '''Função para mostrar opção inválida'''
+
     print('Opção inválida!\n')
     voltar_ao_menu_principal()
 
 def exibir_subtitulos(texto):
+    '''Essa função é responsável por imprimir o subtitulo na tela do usuário'''
+
     os.system('cls')
     linha = '*' * (len(texto))
     print(linha)
@@ -37,6 +46,8 @@ def exibir_subtitulos(texto):
     print(linha)
 
 def cadastrar_novo_restaurante():
+    ''' Essa função é responsável por cadastrar um novo restaurante'''
+
     exibir_subtitulos('Cadastro de novos restaurantes')
     nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     categoria = input(f'Digite o nome da categoria do restaurante {nome_do_restaurante}: ')
@@ -46,6 +57,8 @@ def cadastrar_novo_restaurante():
     voltar_ao_menu_principal()
 
 def listar_restaurantes():
+    '''Essa função é responsável por listar todos os restaurantes'''
+
     exibir_subtitulos('Listando os restaurantes')
 
     print(f'{'Nome do Restaurante'.ljust(22)} | {'Categoria'.ljust(20)} | Status')
@@ -58,6 +71,7 @@ def listar_restaurantes():
     voltar_ao_menu_principal()
 
 def alternar_estado_restaurante():
+    '''Essa função é responsável por alternar o estado do restaurante'''
     exibir_subtitulos('Alternando estado do restaurante')
     nome_restaurante = input('Digite o nome do restaurante que deseja alternar o estado: ')
     restaurante_encontrado = False
@@ -74,6 +88,8 @@ def alternar_estado_restaurante():
     voltar_ao_menu_principal()
 
 def escolher_opcao():
+    '''Função para pegar input do usuário'''
+
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))
 
